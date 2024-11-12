@@ -477,7 +477,7 @@ p {
 .hybrid_approach_section {
     background-color: #1e1e3e; /* Fondo oscuro */
     width: 100vw;
-    height: 100vh; /* Ocupa toda la pantalla */
+    min-height: 100vh;
     padding: 3rem 0;
     text-align: center;
     color: #ffffff;
@@ -485,6 +485,7 @@ p {
     flex-direction: column;
     justify-content: center; /* Centrar contenido verticalmente */
     align-items: center; /* Centrar contenido horizontalmente */
+    margin-bottom: 4rem; /* Añade espacio entre hybrid y footer */
 }
 .hybrid_approach_section h2 {
     font-size: 2.5rem;
@@ -581,6 +582,74 @@ p {
     font-weight: normal;
 }
 
+html, body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #222;
+    color: #aaa;
+    text-align: center;
+}
+
+img {
+    max-height: 50vh;
+    cursor: pointer;
+}
+
+.body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+img {
+    width: 150px;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color: #fff;
+}
+
+.lightbox:target {
+    display: block;
+}
+
+.lightbox span {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 1em;
+}
+
+.lightbox-title {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
 
 
 
@@ -605,22 +674,17 @@ p {
 .footer {
     position: relative;
     width: 100vw;
-    height: 33.3vh;
+    min-height: 33.3vh;
     display: flex;
     justify-content: center; /* Centramos el contenido del footer */
     align-items: center;
     background-color: #f7f7f7;
     padding: 2rem 0;
     text-align: center;
+    margin-top: auto; /* Empuja el footer hacia abajo */
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between; /* Alineamos los elementos en los extremos */
-    align-items: center;
-    width: 90%; /* Ajustamos el ancho para centrarlo mejor */
-    max-width: 1200px;
-}
+
 
 .footer-logo {
     width: 100px;
@@ -693,12 +757,6 @@ p {
         flex-direction: column;
     }
 
-    /* Ajuste del Footer para centrar contenido en móviles */
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .social-icons {
         justify-content: center;
     }
@@ -768,11 +826,22 @@ p {
 
 
 @media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
+    .modulo-footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
         padding: 1rem;
+        text-align: center;
+        margin-top: 2rem; /* Añade espacio arriba del footer */
+        background-color: #fff;
+        z-index: 1; /* Asegura que esté por encima de otros elementos */
+    }
+
+    /* Si tienes contenido antes del footer, asegúrate de que tenga margen inferior */
+    .hybrid_approach_section, 
+    .contact_section,
+    .combining_section {
+        margin-bottom: 2rem;
     }
     .social-icons {
         margin: 1rem 0 0;
@@ -835,16 +904,7 @@ p {
         grid-template-columns: 1fr;
     }
 }
-@media (max-width: 768px) {
-    .contact_section {
-        padding: 1rem;
-        text-align: center;
-    }
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+
 @media (max-width: 768px) {
     .figure1, .figure2, .figure3, .figure4, .figure5, .figure6, .figure7 {
         display: none;
@@ -860,32 +920,59 @@ p {
         display: none; /* Oculta el subtítulo si no es necesario */
     }
 }
-@media (max-width: 768px) {
-    .figure1, .figure2 {
-        width: 250px;
-        height: 250px;
-        top: 0;
-        left: 0;
-    }
-}
-@media (max-width: 768px) {
-    .hero_heading, /* Reemplaza con el selector correcto si es necesario */
-    .hero_subheading {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    .nav_main {
-        background-color: transparent; /* Hace el fondo de la barra superior transparente */
-        box-shadow: none; /* Elimina cualquier sombra */
-    }
-}
-@media (max-width: 768px) {
-    .hamburger {
-        display: none;
+// Definimos el mixin principal para mobile
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
     }
 }
 
+// Mixin para las figuras
+@mixin mobile-figures {
+    @include mobile {
+        .figure1, .figure2 {
+            width: 250px;
+            height: 250px;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+// Mixin para los headings
+@mixin mobile-headings {
+    @include mobile {
+        .hero_heading,
+        .hero_subheading {
+            display: none;
+        }
+    }
+}
+
+// Mixin para la navegación
+@mixin mobile-nav {
+    @include mobile {
+        .nav_main {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+// Mixin para el hamburger
+@mixin mobile-hamburger {
+    @include mobile {
+        .hamburger {
+            display: none;
+        }
+    }
+}
+
+// Implementación
+@include mobile-figures;
+@include mobile-headings;
+@include mobile-nav;
+@include mobile-hamburger;
 /* General Responsive Layout */
 @media (max-width: 768px) {
     /* Ajusta el tamaño del texto principal */
@@ -1180,6 +1267,12 @@ p {
         background-color: #1e1e3e; // Fondo oscuro
         padding: 2rem 1rem; // Ajustar padding para vista móvil
         text-align: center; // Centrar texto en dispositivos móviles
+        margin-bottom: 3rem; /* Ajusta el espacio en móvil */
+    }
+
+    .footer {
+        min-height: 25vh; /* Reduce la altura mínima en móvil */
+        padding: 1.5rem 0;
     }
 
     .hybrid_cards {
