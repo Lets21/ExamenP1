@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo Bio | Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="nav_main">
+            <div class="container-large">
+                <div class="nav_wrapper">
+                    <!-- Logo -->
+                    <a href="/" class="nav_logo-link">
+                        <img src="Imagenes y Logo/Logomodulo.svg" alt="Modulo Logo" class="nav_logo-img">
+                    </a>
+                    <!-- Links de Navegación -->
+                    <nav class="nav_links-wrapper">
+                        <a href="/" class="nav_link">Home</a>
+                        <a href="/about" class="nav_link">About</a>
+                        <a href="/platform" class="nav_link">Platform</a>
+                        <a href="/careers" class="nav_link">Careers</a>
+                        <a href="/contact" class="nav_link">Contact</a>
+                    </nav>
+                    <!-- Botón Menú Hamburguesa -->
+                    <div class="hamburger" onclick="toggleMenu()">☰</div>
+                </div>
+            </div>
+        </header>
+        
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <nav class="nav_links-wrapper">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/platform">Platform</a>
+            <a href="/careers">Careers</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        
+        <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav_links-wrapper');
+            menu.classList.toggle('show');
+        }
+        </script>
+        
+        <section class="hero_section">
+            <div class="overlay"></div> <!-- Agrega este div -->
+            <div class="container-large">
+                <h1 class="hero_heading">Reprogramming the neuroimmune system.</h1>
+                <p class="hero_subheading">We reprogram the brain’s immune system to overcome the world’s toughest diseases.</p>
+            </div>
+        </section>
+        
+        
+
+        
+        
+        <!-- Sección de Plataforma -->
+
+        <section class="info_section">
+            <div class="container-large">
+                <h2 class="info_heading">The brain has unique immune cells that offer hope for new treatments. They’re called</h2>
+                <p class="info_paragraph">
+                    Microglia are key regulators of the nervous system - protecting, maintaining, eliminating, and repairing neurons in order to keep a brain healthy. This capacity for ... makes them ideal tools for therapeutic intervention.
+                </p>
+            </div>
+            <div class="figure figure4"></div>
+        </section>
+
+        </section>
+        <div class="two_column_section">
+            <img src="svg/Primerelemento.svg" alt="Figura SVG 1">
+            <div class="column">
+                <h2 class="column_heading">Studying neuroprotective microglia</h2>
+                <p class="column_paragraph">
+                    Microglia exhibit a variety of behaviors in different
+                    situations and can have beneficial, toxic, or neutral
+                    impact on the brain. Our technology finds microglial
+                    behaviors that support and restore brain health.
+                </p>
+            </div>
+        </div>
+        
+        
+        </section>
+
+        <!-- Sección "Combining Models of the Neuroimmune System" -->
+        <section class="combining_section">
+            <div class="combining_section">
+                <img src="svg/Segundoelemento.svg" alt="Figura SVG 1">
+                <div class="combining_text">
+                    <h2 class="combining_heading">Combining models of the neuroimmune system</h2>
+                    <p class="combining_paragraph">
+                        Models are noisy and never fully represent disease progression. That’s why we look for common signals between different models of the neuroimmune system when understanding microglial behaviors and how to modify them.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección "Reprogramming Microglia to Treat Patients" -->
+        <section class="reprogramming_section">
+            <div class="reprogramming_section">
+                <img src="svg/Tercerelemento.svg" alt="Figura SVG 1">
+                <div class="reprogramming_text">
+                    <h2 class="reprogramming_heading">Reprogramming microglia to treat patients</h2>
+                    <p class="reprogramming_paragraph">
+                        We develop drugs that enhance the neuroimmune system to treat neurological conditions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+     <!-- Sección de Contacto -->
+
+        <!-- Sección de Contacto -->
+        <section class="contact_section">
+            <div class="contact_content">
+                <p class="contact_paragraph">If you're interested in partnering or passionate about harnessing the neuroimmune system, get in touch.</p>
+                <button class="contact_button">Contact Us →</button>
+            </div>
+            <img src="svg/Cuartoelemento.svg" alt="Figura SVG 1">
+        </section>
+        
+        
+        
+
+
+
+        <section class="hybrid_approach_section">
+            <div class="container-large">
+                <h2>Our Hybrid Approach</h2>
+                <p>Our full-stack team of scientists and engineers combine deep experience in stem cell engineering, neurobiology, multiomics, and machine learning.</p>
+                <div class="hybrid_cards">
+                    <div class="hybrid_card">
+                        <h3>Stem Cell Engineering</h3>
+                        <p>Rapidly generate human microglia-centered neuroimmune microenvironments with neurons and astrocytes from stem cells.</p>
+                    </div>
+                    <div class="hybrid_card">
+                        <h3>Neurobiology</h3>
+                        <p>We use multiple complementary models of the neuroimmune system to separate signal from noise.</p>
+                    </div>
+                    <div class="hybrid_card">
+                        <h3>Multiomics</h3>
+                        <p>CRISPR and single cell techniques are used to manipulate and measure the neuroimmune system in cell models and from patient samples.</p>
+                    </div>
+                    <div class="hybrid_card">
+                        <h3>Machine Learning</h3>
+                        <p>Discover cell fingerprints, functional biomarkers, optimal experiments, and biological relationships.</p>
+                    </div>
+                </div>
+                <a href="#" class="cta_button">See our Platform</a>
+                <img src="Imagenes y Logo/Logomodulo.svg" alt="Modulo Logo" class="nav_logo-img">
+            </div>
+        </section>
+
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <img src="Imagenes y Logo/Logomodulo.svg" alt="Modulo Logo" class="footer-logo">
+                <div class="social-icons">
+                    <a href="#"><img src="Imagenes y Logo/Twiter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Imagenes y Logo/Linkdin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </footer>
+
+</body>
+</html>

@@ -1,0 +1,736 @@
+@charset "UTF-8";
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estructura general */
+body {
+  font-family: "IBM Plex Mono", monospace;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.background {
+  background: linear-gradient(45deg, #FECACA, #FFE6A7, #B6E2D3);
+}
+
+.container {
+  padding: 2rem;
+  margin: 1rem auto;
+}
+
+.page-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Navegación */
+.nav_main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Fondo transparente */
+  z-index: 100; /* Asegura que el menú esté encima */
+  padding: 2rem 2rem 1rem; /* Ajusta el padding superior */
+}
+
+.container-large {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mantener visible el menú en pantallas grandes */
+.nav_links-wrapper {
+  display: flex; /* Asegura que el menú esté visible */
+  gap: 1.5rem; /* Espacio entre los enlaces */
+  justify-content: flex-end; /* Alinea el menú a la derecha */
+}
+
+/* Ajusta el contenedor de navegación principal */
+.nav_main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 100;
+  padding: 2rem 2rem 1rem; /* Ajusta el padding superior */
+}
+
+/* Alineación de los enlaces */
+.nav_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ajuste de fuente y espaciado en los enlaces */
+.nav_link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  transition: color 0.3s;
+  font-size: 1.1rem; /* Tamaño de fuente ajustado */
+}
+
+.nav_link:hover {
+  color: #000;
+}
+
+/* Icono de menú hamburguesa */
+.hamburger {
+  display: none; /* Oculta el icono de menú en pantallas grandes */
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+/* Mostrar el icono de menú solo en pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav_links-wrapper {
+    display: none; /* Oculta el menú en pantallas pequeñas por defecto */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hamburger {
+    display: block; /* Muestra el icono de menú en pantallas pequeñas */
+  }
+  .show {
+    display: flex !important; /* Muestra el menú cuando se hace clic en el icono */
+  }
+}
+/* Hero section */
+.hero_section {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: url("../svg/Fondo1.svg"); /* Fondo SVG */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero_heading {
+  font-size: 5rem; /* Aumentado para mayor escala */
+  color: #222;
+  line-height: 1.1; /* Ajuste para reducir espacio entre líneas */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  max-width: 60vw; /* Limitar el ancho del título para evitar que se extienda demasiado */
+}
+
+.hero_subheading {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 1.5;
+}
+
+.figures {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.figure1 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #FECACA, #FFE6A7);
+  top: -200px;
+  left: -200px;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.figure2 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #B6E2D3, #80CBC4);
+  opacity: 0.7;
+  top: 50px;
+  right: -250px;
+  border-radius: 50%;
+}
+
+.hero_heading {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.hero_subheading {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sección de Plataforma */
+.platform_section {
+  padding: 3rem 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.platform_cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.platform_card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajusta para mayor o menor suavidad */
+  border-radius: 8px; /* Cambia si el diseño necesita bordes más redondeados */
+}
+
+.platform_card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.platform_card p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .figure1, .figure2, .figure3 {
+    width: 300px;
+    height: 300px;
+  }
+  .figure1 {
+    top: -100px;
+    left: -100px;
+  }
+  .figure2 {
+    top: 50px;
+    right: -150px;
+  }
+  .figure3 {
+    bottom: -100px;
+  }
+}
+.info_section {
+  position: relative;
+  padding: 3rem 2rem;
+  background-color: #fdfdf5; /* Ajuste del color de fondo */
+  text-align: left;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.info_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+.info_paragraph {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.figure4 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #FFCCBC, #FFECB3);
+  top: -50px;
+  right: -150px;
+  opacity: 0.7;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.two_column_section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Esto centra la sección */
+  padding: 4rem 2rem;
+  gap: 3rem;
+  background-color: #fefefe;
+}
+
+.column {
+  flex: 1;
+  max-width: 500px; /* Ajusta el ancho máximo para alinearlo mejor */
+  margin-right: 1rem; /* Añade margen a la derecha */
+}
+
+.column_heading {
+  font-size: 2rem; /* Ajusta el tamaño del título para hacerlo más pequeño */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2.5rem; /* Reduce el espaciado entre el título y el párrafo */
+}
+
+.column_paragraph {
+  font-size: 1rem; /* Ajusta el tamaño del texto del párrafo */
+  color: #555;
+  line-height: 1.6; /* Reduce el espacio entre líneas */
+  margin-top: 0.5rem; /* Ajusta el margen superior */
+}
+
+.figure5 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #FFCCBC, #FFECB3);
+  border-radius: 50%;
+  position: relative; /* Cambia a relative */
+  left: -50px; /* Ajusta hacia la izquierda para centrar */
+  top: 0;
+}
+
+.combining_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+  background-color: #f9f9f9;
+}
+
+.figure6 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #3eeeeb, #FFECB3);
+  border-radius: 50%;
+  position: relative;
+  left: -50px;
+  top: 0;
+}
+
+.combining_text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.combining_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.combining_paragraph {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.reprogramming_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+  background-color: #ffffff;
+}
+
+.figure7 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #FFCCBC, #FFECB3);
+  border-radius: 50%;
+  position: relative;
+  left: -50px;
+  top: 0;
+}
+
+.reprogramming_text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.reprogramming_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.reprogramming_paragraph {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Sección de Contacto */
+/* Sección de Contacto */
+.contact_section {
+  position: relative;
+  width: 100vw;
+  height: 60vh; /* Ajusta la altura según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact_content {
+  max-width: 500px;
+  z-index: 1; /* Asegura que el contenido esté por encima de la figura */
+}
+
+.contact_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact_paragraph {
+  font-size: 2rem;
+  color: #555;
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact_button {
+  padding: 0.8rem 2rem;
+  background-color: #FFEB3B;
+  color: #222;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact_button:hover {
+  background-color: #ffcc00;
+}
+
+.contact_figure {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #B2DFDB, #A0E3FF);
+  border-radius: 50%;
+  right: -50px; /* Ligeramente hacia la derecha */
+  opacity: 0.5;
+  z-index: 0; /* Asegura que esté detrás del contenido */
+}
+
+/* Sección de Nuestro Enfoque Híbrido */
+.hybrid_approach_section {
+  background-color: #1e1e3e; /* Fondo oscuro */
+  width: 100vw;
+  height: 100vh; /* Ocupa toda la pantalla */
+  padding: 3rem 0;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+}
+
+.hybrid_approach_section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hybrid_approach_section p {
+  font-size: 1.2rem;
+  color: #cfcfcf;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.hybrid_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Distribución en 2 columnas */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hybrid_card {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.hybrid_card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+  position: relative;
+}
+
+.hybrid_card h3::after {
+  content: "";
+  display: block;
+  width: 40px; /* Ancho de la línea */
+  height: 4px; /* Grosor de la línea */
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.hybrid_card:nth-child(1) h3::after {
+  background-color: #FF6B6B; /* Color para "Stem Cell Engineering" */
+}
+
+.hybrid_card:nth-child(2) h3::after {
+  background-color: #4ECDC4; /* Color para "Neurobiology" */
+}
+
+.hybrid_card:nth-child(3) h3::after {
+  background-color: #FFE66D; /* Color para "Multiomics" */
+}
+
+.hybrid_card:nth-child(4) h3::after {
+  background-color: #9E75D6; /* Color para "Machine Learning" */
+}
+
+.hybrid_card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Estilo para el botón de llamada a la acción */
+.cta_button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffe500;
+  color: #222;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta_button:hover {
+  background-color: #ffcc00;
+}
+
+.cta_button::after {
+  content: "→";
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hybrid_cards {
+    grid-template-columns: 1fr; /* Cambia a 1 columna en dispositivos pequeños */
+  }
+}
+.footer {
+  position: relative;
+  width: 100vw;
+  height: 33.3vh;
+  display: flex;
+  justify-content: center; /* Centramos el contenido del footer */
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Alineamos los elementos en los extremos */
+  align-items: center;
+  width: 90%; /* Ajustamos el ancho para centrarlo mejor */
+  max-width: 1200px;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-right: 20px; /* Ajustamos el espacio entre el logo y los iconos */
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5rem; /* Reducimos la separación entre los iconos */
+  margin-left: 0; /* Eliminamos cualquier margen adicional a la izquierda */
+}
+
+.social-icons a img {
+  width: 24px;
+  margin: 0;
+}
+
+/* Estilos para pantallas grandes (escritorio) */
+@media (min-width: 768px) {
+  .hero_heading {
+    font-size: 5rem;
+  }
+  .container-large {
+    width: 90%;
+  }
+  /* Ajuste de figuras decorativas */
+  .figure1, .figure2 {
+    width: 700px;
+    height: 700px;
+  }
+  /* Sección de columnas (Desktop) */
+  .two_column_section {
+    flex-direction: row;
+  }
+}
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  .hero_heading {
+    font-size: 2.5rem;
+  }
+  .hero_subheading {
+    font-size: 1rem;
+  }
+  .contact_section {
+    padding: 1rem;
+  }
+  /* Figuras decorativas en tamaño reducido */
+  .figure1, .figure2, .figure3 {
+    width: 300px;
+    height: 300px;
+  }
+  .container-large {
+    padding: 1rem;
+  }
+  /* Sección de columnas (Mobile) */
+  .two_column_section {
+    flex-direction: column;
+  }
+  /* Ajuste del Footer para centrar contenido en móviles */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .figure1, .figure2 {
+    width: 250px;
+    height: 250px;
+    top: -50px;
+    left: -50px;
+  }
+  .figure3 {
+    width: 300px;
+    height: 300px;
+    top: 150px;
+    right: -100px;
+  }
+}
+@media (max-width: 768px) {
+  .hero_section {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero_heading {
+    font-size: 2rem;
+    max-width: 90vw;
+  }
+  .hero_subheading {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+}
+@media (max-width: 768px) {
+  .contact_figure,
+  .figure5, .figure6, .figure7 {
+    display: none;
+  }
+}
+.nav_links-wrapper {
+  display: none;
+}
+
+.nav_main .hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav_links-wrapper {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 1rem;
+  }
+  .social-icons {
+    margin: 1rem 0 0;
+    justify-content: center;
+  }
+}
+/* Estilo para mostrar el menú */
+.show {
+  display: block !important;
+}
+
+/*# sourceMappingURL=style.css.map */
