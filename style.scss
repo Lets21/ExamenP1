@@ -581,6 +581,21 @@ p {
     font-weight: normal;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE*/
+
+
+
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
     .hybrid_cards {
@@ -622,6 +637,10 @@ p {
     width: 24px;
     margin: 0;
 }
+
+
+
+
 
 /* Estilos para pantallas grandes (escritorio) */
 @media (min-width: 768px) {
@@ -771,3 +790,409 @@ p {
 
 
 
+@media (max-width: 768px) {
+    .container-large {
+        width: 90%;
+        padding: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .hero_heading {
+        font-size: 2.5rem;
+    }
+
+    .hero_subheading {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .two_column_section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .column, .info_section {
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .nav_links-wrapper {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+    }
+    .hamburger {
+        display: block;
+    }
+    .show {
+        display: flex !important;
+    }
+}
+@media (max-width: 768px) {
+    .hybrid_cards {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .contact_section {
+        padding: 1rem;
+        text-align: center;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .figure1, .figure2, .figure3, .figure4, .figure5, .figure6, .figure7 {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .hero_heading {
+        font-size: 2rem; /* Ajusta el tamaño */
+    }
+    
+    /* Oculta o ajusta el diseño de la sección si es necesario */
+    .hero_subheading {
+        display: none; /* Oculta el subtítulo si no es necesario */
+    }
+}
+@media (max-width: 768px) {
+    .figure1, .figure2 {
+        width: 250px;
+        height: 250px;
+        top: 0;
+        left: 0;
+    }
+}
+@media (max-width: 768px) {
+    .hero_heading, /* Reemplaza con el selector correcto si es necesario */
+    .hero_subheading {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .nav_main {
+        background-color: transparent; /* Hace el fondo de la barra superior transparente */
+        box-shadow: none; /* Elimina cualquier sombra */
+    }
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* General Responsive Layout */
+@media (max-width: 768px) {
+    /* Ajusta el tamaño del texto principal */
+    .info_heading {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .info_paragraph {
+        font-size: 1rem;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Ajusta el tamaño y posición de los círculos decorativos */
+    .figure5, .figure6, .figure7 {
+        width: 150px;
+        height: 150px;
+        top: auto;
+        left: auto;
+        margin: 0 auto;
+        opacity: 0.7;
+    }
+
+    /* Alineación y espaciado del contenido */
+    .two_column_section, .combining_section, .reprogramming_section {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    .column, .combining_text, .reprogramming_text {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    /* Ajuste de margen en contenedores */
+    .two_column_section .column_heading, 
+    .combining_section .combining_heading, 
+    .reprogramming_section .reprogramming_heading {
+        margin-bottom: 1rem;
+    }
+}
+
+
+// Media query para dispositivos móviles (celulares)
+@media only screen and (max-width: 768px) {
+  .container {
+    // Cambia la dirección del contenido en dispositivos móviles si es necesario
+    flex-direction: column-reverse;
+
+    .section {
+      .text {
+        font-size: 1em;
+        text-align: center;
+      }
+      .image {
+        width: 100%;
+        margin: 0 auto 1em;
+      }
+    }
+
+    // Ajustes específicos para el orden
+    .section:nth-child(2) {
+      order: 1; // Mueve esta sección al inicio en vista móvil
+    }
+    .section:nth-child(1) {
+      order: 2; // Esta sección queda en segundo lugar en vista móvil
+    }
+    .section:nth-child(3) {
+      order: 3; // Esta sección queda en tercer lugar en vista móvil
+    }
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero_section {
+        padding: 1rem; /* Ajustar el padding */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .hero_heading {
+        font-size: 2rem; /* Ajustar tamaño de fuente */
+        margin-bottom: 1rem; /* Espaciado inferior */
+    }
+
+    .hero_subheading {
+        font-size: 1rem; /* Ajustar tamaño de fuente */
+        margin-bottom: 1rem; /* Espaciado inferior */
+    }
+
+    .stem_cell_image {
+        max-width: 80%; /* Ajustar el ancho máximo de la imagen */
+        height: auto; /* Mantener la proporción de la imagen */
+        margin: 0 auto; /* Centrar la imagen */
+    }
+
+    .stem_cell_paragraph {
+        font-size: 0.9rem; /* Ajustar tamaño de texto */
+        line-height: 1.5; /* Ajustar el espaciado entre líneas */
+        margin: 0 1rem; /* Espaciado lateral */
+    }
+
+    .neurobiology_section {
+        padding: 2rem 1rem; /* Ajustar el padding */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .neurobiology_heading {
+        font-size: 1.5rem; /* Ajustar tamaño de fuente */
+        margin-bottom: 1rem; /* Espaciado inferior */
+    }
+
+    .neurobiology_paragraph {
+        font-size: 0.9rem; /* Ajustar tamaño de texto */
+        line-height: 1.5; /* Ajustar el espaciado entre líneas */
+        margin: 0 1rem; /* Espaciado lateral */
+    }
+}
+
+
+
+/* General Responsive Layout */
+@media (max-width: 768px) {
+    /* Ajuste del contenedor principal */
+    .container-large {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    /* Ajustes de títulos y párrafos */
+    .info_heading, .contact_heading, .reprogramming_heading, .combining_heading {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .info_paragraph, .contact_paragraph, .reprogramming_paragraph, .combining_paragraph {
+        font-size: 1rem;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Ajustes específicos para las secciones */
+    .hero_section {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .hero_heading {
+        font-size: 2rem;
+        max-width: 90vw;
+    }
+    
+    .hero_subheading {
+        font-size: 1rem;
+        display: none; /* Oculta si es necesario */
+    }
+
+    /* Reordenamiento de secciones */
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .section {
+            .text {
+                font-size: 1em;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            
+            .image {
+                width: 100%;
+                margin: 0 auto 1em;
+            }
+        }
+    }
+
+    /* Evitar superposición en elementos con imágenes decorativas */
+    .figure1, .figure2, .figure3, .figure4, .figure5, .figure6, .figure7, .contact_figure {
+        display: none; /* Oculta figuras decorativas en móviles */
+    }
+
+    /* Evitar superposición de líneas gráficas */
+    .linea-visual {
+        display: none; /* Oculta líneas decorativas si causan problemas de superposición */
+    }
+}
+
+/* Ajuste específico para la sección "Stem Cell Engineering" */
+@media (max-width: 768px) {
+    .stem_cell_section {
+        padding: 1rem;
+        text-align: center;
+
+        .stem_cell_image {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .stem_cell_paragraph {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Ajustes específicos para la imagen "Cuartoelemento.svg" */
+    .cuarto_elemento { /* Cambia ".cuarto_elemento" al selector adecuado si tienes una clase específica */
+        max-width: 50%; /* Ajusta el tamaño máximo al 50% del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 0 auto; /* Centra la imagen */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .stem_cell_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .stem_cell_image {
+        max-width: 70%; /* Ajusta el tamaño de la imagen */
+        margin: 0 auto 1rem; /* Centra la imagen y añade margen inferior */
+    }
+
+    .stem_cell_paragraph {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+        line-height: 1.5;
+        max-width: 80%; /* Ajusta el ancho máximo del párrafo */
+        margin: 0 auto; /* Centra el párrafo */
+    }
+
+    .contact_button {
+        margin-top: 1.5rem; /* Espacio extra para la separación del botón */
+        padding: 0.8rem 2rem;
+        background-color: #FFEB3B;
+        color: #222;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+
+        .cuarto_elemento {
+            max-width: 60%; /* Ajusta el tamaño según necesites */
+            height: auto;
+            margin-bottom: 1rem; /* Espaciado inferior para separarla del texto */
+        }
+
+        .contact_text {
+            font-size: 1rem;
+            margin: 1rem 0;
+            max-width: 90%;
+        }
+
+        .contact_button {
+            padding: 0.8rem 2rem;
+            background-color: #FFEB3B;
+            color: #222;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+    }
+}
+
+  
+
+@media (max-width: 768px) {
+    .hybrid_approach_section {
+        background-color: #1e1e3e; // Fondo oscuro
+        padding: 2rem 1rem; // Ajustar padding para vista móvil
+        text-align: center; // Centrar texto en dispositivos móviles
+    }
+
+    .hybrid_cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem; // Espaciado entre tarjetas
+    }
+
+    .hybrid_card {
+        background-color: #ffffff;
+        color: #333;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+    }
+}
